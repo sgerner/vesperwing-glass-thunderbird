@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Vesperwing Glass Light for Thunderbird",
+  "description": "Adaptive light/dark palette with translucent teal-accented chrome. The companion profile CSS adds full KDE Plasma glass surfaces.",
+  "version": "1.0.1",
+  "homepage_url": "https://github.com/sgerner/vesperwing-glass-thunderbird",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{b8f17cb7-f951-4a9b-aa18-9bc19e6f1211}",
+      "strict_min_version": "157.0"
+    }
+  },
+  "theme": {
+    "colors": {
+      "frame": "rgba(0, 0, 0, 0)",
+      "frame_inactive": "rgba(0, 0, 0, 0)",
+      "toolbar": "rgba(0, 0, 0, 0)",
+      "toolbar_text": "#172b37",
+      "icons": "#172b37",
+      "icons_attention": "#12627a",
+      "button_background_hover": "rgba(28, 105, 130, 0.10)",
+      "button_background_active": "#cce6ed",
+      "toolbar_bottom_separator": "rgba(31, 65, 82, 0.16)",
+      "toolbar_vertical_separator": "rgba(31, 65, 82, 0.16)",
+      "toolbar_field": "rgba(255, 255, 255, 0.56)",
+      "toolbar_field_text": "#172b37",
+      "toolbar_field_border": "rgba(31, 65, 82, 0.16)",
+      "toolbar_field_focus": "rgba(255, 255, 255, 0.56)",
+      "toolbar_field_text_focus": "#172b37",
+      "toolbar_field_border_focus": "#12627a",
+      "toolbar_field_highlight": "#cce6ed",
+      "toolbar_field_highlight_text": "#172b37",
+      "tab_selected": "#cce6ed",
+      "tab_text": "#172b37",
+      "tab_background_text": "#435966",
+      "tab_line": "#12627a",
+      "tab_loading": "#12627a",
+      "tab_background_separator": "rgba(31, 65, 82, 0.16)",
+      "sidebar": "rgba(232, 242, 246, 0.42)",
+      "sidebar_text": "#172b37",
+      "sidebar_border": "rgba(31, 65, 82, 0.16)",
+      "sidebar_highlight": "rgba(28, 105, 130, 0.48)",
+      "sidebar_highlight_text": "#172b37",
+      "sidebar_highlight_border": "rgba(31, 65, 82, 0.16)",
+      "popup": "rgba(250, 252, 253, 0.96)",
+      "popup_text": "#172b37",
+      "popup_border": "rgba(31, 65, 82, 0.16)",
+      "popup_highlight": "rgba(28, 105, 130, 0.14)",
+      "popup_highlight_text": "#172b37"
+    },
+    "properties": {
+      "color_scheme": "light",
+      "content_color_scheme": "light"
+    }
+  }
+}

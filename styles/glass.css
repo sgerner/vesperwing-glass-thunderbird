@@ -1,0 +1,257 @@
+/* Vesperwing Glass: compositor glass on application chrome only.
+ * This file is for userChrome.css. Never import it in userContent.css. */
+@-moz-document url("chrome://messenger/content/messenger.xhtml"), url-prefix("about:3pane"), url-prefix("about:message"), url("chrome://messenger/content/about3Pane.xhtml"), url("chrome://messenger/content/aboutMessage.xhtml"), url("chrome://messenger/content/messageWindow.xhtml") {
+ :root, body { background: transparent !important; }
+}
+  @media screen and (forced-colors: none) {
+    :root {
+      --ag-ink: light-dark(#172b37, #edf4f7);
+      --ag-muted: light-dark(#435966, #bdcbd3);
+      --ag-glass: light-dark(rgba(242,248,250,.48), rgba(15,27,36,.34));
+      --ag-sidebar: light-dark(rgba(232,242,246,.42), rgba(12,23,32,.28));
+      --ag-bar: light-dark(rgba(245,250,252,.54), rgba(22,36,47,.32));
+      --ag-paper: light-dark(#fafcfd, #14222c);
+      --ag-message: light-dark(rgba(250,252,253,.58), rgba(14,24,32,.42));
+      --ag-line: light-dark(rgba(31,65,82,.16), rgba(181,214,230,.14));
+      --ag-hover: light-dark(rgba(28,105,130,.10), rgba(159,212,230,.10));
+      --ag-select: light-dark(rgba(143,205,220,.48), rgba(45,111,132,.48));
+      --ag-accent: light-dark(#12627a, #8bd7e7);
+      --ag-field: light-dark(rgba(255,255,255,.56), rgba(9,20,29,.38));
+
+    }
+    #messengerWindow, #paneLayout, #messagepanebox {
+      --color-text-base: var(--ag-ink) !important;
+      --color-text-secondary: var(--ag-muted) !important;
+      --tree-view-color: var(--ag-ink) !important;
+      --tree-view-bg: transparent !important;
+      --treeitem-background-hover: var(--ag-hover) !important;
+      --treeitem-background-selected: var(--ag-select) !important;
+      --treeitem-background-active: var(--ag-select) !important;
+      --treeitem-text-active: var(--ag-ink) !important;
+      --sidebar-text-color: var(--ag-ink) !important;
+      --sidebar-highlight-text-color: var(--ag-ink) !important;
+      --sidebar-highlight-background-color: var(--ag-select) !important;
+      --selected-item-color: var(--ag-select) !important;
+      --selected-item-text-color: var(--ag-ink) !important;
+      --focus-outline-color: var(--ag-accent) !important;
+
+    }
+    :root#messengerWindow > body, #messengerBody, #tabmail, #tabpanelcontainer { background: transparent !important; }
+    #navigation-toolbox, #unifiedToolbar, #unifiedToolbarContent,
+    #tabs-toolbar, #status-bar {
+      background: transparent !important;
+      color: var(--ag-ink) !important;
+      background-image: none !important;
+    }
+    :root#messengerWindow[lwtheme] #status-bar {
+      --layout-background-1: transparent !important;
+      --lwt-frame: transparent !important;
+      --lwt-header-image: none !important;
+      --lwt-additional-images: none !important;
+      appearance: none !important;
+      background-color: transparent !important;
+      background-image: none !important;
+      border-block-start-color: var(--ag-line) !important;
+      color: var(--ag-muted) !important;
+    }
+    /* The status bar has themed child panels of its own; clear those too so
+     * the KDE backdrop reaches the bottom edge without losing status text. */
+    #status-bar > hbox, #status-bar > toolbarbutton,
+    #status-bar .statusbarpanel, #statusTextBox {
+      background: transparent !important;
+      background-image: none !important;
+      color: var(--ag-muted) !important;
+    }
+    :root#messengerWindow[lwtheme] #status-bar toolbarbutton {
+      background: transparent !important;
+      background-image: none !important;
+      color: var(--ag-muted) !important;
+    }
+    #status-bar #spacesToolbarReveal:hover {
+      background: var(--ag-hover) !important;
+      color: var(--ag-ink) !important;
+    }
+    #unifiedToolbarContent, #tabs-toolbar { border-bottom: 1px solid var(--ag-line) !important; }
+    /* Spaces Toolbar: let the wallpaper show through while keeping every app
+     * destination easy to find. Its native layout and hit targets stay intact. */
+    #spacesToolbar.spaces-toolbar:not([hidden]) {
+      --spaces-bg-color: var(--ag-sidebar) !important;
+      --spaces-bg-image: none !important;
+      --spaces-button-text-color: var(--ag-muted) !important;
+      --spaces-button-active-bg-color: var(--ag-select) !important;
+      --spaces-button-active-text-color: var(--ag-ink) !important;
+      --spaces-button-opacity: 1 !important;
+      border-inline-end: 1px solid var(--ag-line) !important;
+      box-shadow: none !important;
+    }
+    #spacesToolbar .spaces-toolbar-button {
+      color: var(--ag-muted) !important;
+      opacity: 1 !important;
+      border-radius: 10px !important;
+      outline-offset: 2px !important;
+    }
+    #spacesToolbar .spaces-toolbar-button:hover:not(.current) {
+      background: var(--ag-hover) !important;
+      color: var(--ag-ink) !important;
+    }
+    #spacesToolbar .spaces-toolbar-button.current,
+    #spacesToolbar .spaces-toolbar-button.current:hover {
+      background: var(--ag-select) !important;
+      color: var(--ag-ink) !important;
+      box-shadow: inset 3px 0 var(--ag-accent) !important;
+    }
+    #spacesToolbar .spaces-toolbar-button:not([disabled]):hover:active {
+      background: var(--ag-select) !important;
+      color: var(--ag-ink) !important;
+    }
+    #spacesToolbar .spaces-toolbar-button:focus-visible {
+      outline: 2px solid var(--ag-accent) !important;
+      outline-offset: 2px !important;
+    }
+    #spacesToolbar .spaces-toolbar-button:disabled {
+      color: var(--ag-muted) !important;
+      opacity: .62 !important;
+    }
+    :root#messengerWindow global-search-bar {
+      --search-bar-background: var(--ag-field) !important;
+      --search-bar-focus-background: var(--ag-field) !important;
+      --search-bar-border-color: var(--ag-line) !important;
+      --search-bar-color: var(--ag-ink) !important;
+      --search-field-placeholder: var(--ag-muted) !important;
+      --focus-outline-color: var(--ag-accent) !important;
+    }
+    #searchInput, #search-bar, #unifiedToolbar .search-bar {
+      background: var(--ag-field) !important;
+      color: var(--ag-ink) !important;
+      border: 1px solid var(--ag-line) !important;
+      border-radius: 9px !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,.06) !important;
+    }
+    #folderPane { background: var(--ag-sidebar) !important; color: var(--ag-ink) !important; }
+    #folderPaneHeaderBar, #threadPaneHeaderBar, #quick-filter-bar {
+      background: var(--ag-bar) !important;
+      color: var(--ag-ink) !important;
+      border-bottom: 1px solid var(--ag-line) !important;
+    }
+    #threadPane { background: var(--ag-glass) !important; color: var(--ag-ink) !important; }
+    #threadTree, #threadTree table, #threadTree tbody { background: transparent !important; }
+    /* Style the card once, not both the row and its child (alpha stacks). */
+    #threadTree tr.card-layout, #threadTree tr.card-layout > td { background: transparent !important; }
+    #threadTree .card-container {
+      background: light-dark(rgba(255,255,255,.18), rgba(12,20,28,.18)) !important;
+      color: var(--ag-ink) !important;
+      border: 1px solid transparent !important;
+      border-bottom-color: var(--ag-line) !important;
+      border-radius: 8px !important;
+      box-shadow: none !important;
+    }
+    #threadTree .card-layout:hover .card-container,
+    #threadTree .table-layout:hover { background: var(--ag-hover) !important; }
+    #threadTree .card-layout.selected .card-container,
+    #threadTree .table-layout.selected,
+    #threadTree .table-layout.selected.current {
+      background: var(--ag-select) !important;
+      color: var(--ag-ink) !important;
+      border-color: var(--ag-line) !important;
+      box-shadow: inset 3px 0 var(--ag-accent) !important;
+    }
+    #threadTree:focus-within .card-layout.current .card-container,
+    #threadTree:focus-within .table-layout.current {
+      outline: 1px solid var(--ag-accent) !important;
+      outline-offset: -1px !important;
+    }
+    #threadTree .card-container .date { color: var(--ag-muted) !important; opacity: 1 !important; }
+    #threadTree .card-container .subject { color: var(--ag-ink) !important; }
+    #threadTree .card-layout[data-properties~="new"] .subject { color: var(--ag-accent) !important; }
+    /* One glass layer; nested wrappers must not stack their opacity. */
+    #messagePane, #messagepane, #messagepaneboxwrapper { background: transparent !important; }
+    #messagepanebox { background: var(--ag-message) !important; color: var(--ag-ink) !important; }
+    /* Blend the isolated mail renderer without changing author HTML colors.
+     * This fades text slightly too; keep the value conservative. */
+    #messagepane { opacity: .68 !important; }
+    browser[id^="preferencesTabBrowser"] { opacity: .82 !important; }
+    /* Built-in content pages such as Add-ons Manager paint an opaque canvas.
+     * Blend those tab browsers with the backdrop while preserving mail and
+     * preferences, which have their own carefully tuned opacity. */
+    #tabmail browser:not(#messagepane):not([id^="preferencesTabBrowser"]) {
+      opacity: .68 !important;
+    }
+    #messageHeader { background: var(--ag-bar) !important; color: var(--ag-ink) !important; border-bottom: 1px solid var(--ag-line) !important; }
+    #folderPaneSplitter, #messagePaneSplitter { background: var(--ag-line) !important; border: 0 !important; }
+    .tabmail-tab[selected="true"], .tabmail-tab[visuallyselected="true"] {
+      background: var(--ag-select) !important;
+      color: var(--ag-ink) !important;
+      border-radius: 8px 8px 0 0 !important;
+    }
+    #unifiedToolbar button:hover, #folderPaneHeaderBar button:hover { background-color: var(--ag-hover) !important; }
+    :is(#unifiedToolbar, #folderPaneHeaderBar, #threadPaneHeaderBar) :is(button, input):focus-visible {
+      outline: 2px solid var(--ag-accent) !important;
+      outline-offset: 2px !important;
+    }
+  }
+  @media screen and (prefers-reduced-transparency: reduce) {
+    #messagepane, browser[id^="preferencesTabBrowser"],
+    #tabmail browser:not(#messagepane):not([id^="preferencesTabBrowser"]) {
+      opacity: 1 !important;
+    }
+    :root { --ag-glass: var(--ag-paper); --ag-sidebar: var(--ag-paper); --ag-bar: var(--ag-paper); --ag-message: var(--ag-paper); }
+    :root#messengerWindow, #paneLayout, #navigation-toolbox, #unifiedToolbar,
+    #unifiedToolbarContent, #tabs-toolbar, #status-bar { background: var(--ag-paper) !important; }
+  }
+  @media (forced-colors: active) {
+    #messagepane, browser[id^="preferencesTabBrowser"],
+    #tabmail browser:not(#messagepane):not([id^="preferencesTabBrowser"]) {
+      opacity: 1 !important;
+    }
+    :root#messengerWindow, #paneLayout, #spacesToolbar {
+      background: Canvas !important;
+      background-image: none !important;
+      color: CanvasText !important;
+      border-color: CanvasText !important;
+    }
+    #spacesToolbar .spaces-toolbar-button,
+    #spacesToolbar .spaces-toolbar-button:hover:not(.current) {
+      background: Canvas !important;
+      color: CanvasText !important;
+      box-shadow: none !important;
+    }
+    #spacesToolbar .spaces-toolbar-button.current,
+    #spacesToolbar .spaces-toolbar-button.current:hover,
+    #spacesToolbar .spaces-toolbar-button:not([disabled]):hover:active {
+      background: Highlight !important;
+      color: HighlightText !important;
+      box-shadow: none !important;
+    }
+    #spacesToolbar .spaces-toolbar-button:focus-visible {
+      outline: 2px solid Highlight !important;
+    }
+  }
+  @media print {
+    #messagepane, browser[id^="preferencesTabBrowser"],
+    #tabmail browser:not(#messagepane):not([id^="preferencesTabBrowser"]) {
+      opacity: 1 !important;
+    }
+    :root#messengerWindow { background: white !important; color: black !important; }
+  }
+
+/* Preferences use the same glass shell, with native control contrast retained. */
+@-moz-document url-prefix("about:preferences"), url("chrome://messenger/content/preferences/preferences.xhtml") {
+  @media screen and (forced-colors: none) {
+    :root#MailPreferences { background: transparent !important; }
+    #MailPreferences > body, #preferences-stack, #prefBox { background: transparent !important; }
+    #pref-category-box { background: light-dark(rgba(232,242,246,.42),rgba(12,23,32,.28)) !important; }
+    #preferencesContainer { background: light-dark(rgba(250,252,253,.65),rgba(14,24,32,.48)) !important; }
+  }
+  @media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+    :root#MailPreferences, #preferencesContainer, #pref-category-box { background: Canvas !important; }
+  }
+}
+/* Print controls only; preview paper and printed output remain native. */
+@-moz-document url("chrome://global/content/print.html") {
+  @media screen and (forced-colors: none) {
+    :root, body { background: light-dark(rgba(250,252,253,.78),rgba(18,29,38,.74)) !important; }
+  }
+  @media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+    :root, body { background: Canvas !important; }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Vesperwing Glass Dark for Thunderbird",
+  "description": "Adaptive light/dark palette with translucent teal-accented chrome. The companion profile CSS adds full KDE Plasma glass surfaces.",
+  "version": "1.0.1",
+  "homepage_url": "https://github.com/sgerner/vesperwing-glass-thunderbird",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{d24b5acf-53bd-491e-9a2f-317a88ae7a48}",
+      "strict_min_version": "157.0"
+    }
+  },
+  "theme": {
+    "colors": {
+      "frame": "rgba(0, 0, 0, 0)",
+      "frame_inactive": "rgba(0, 0, 0, 0)",
+      "toolbar": "rgba(0, 0, 0, 0)",
+      "toolbar_text": "#edf4f7",
+      "icons": "#edf4f7",
+      "icons_attention": "#8bd7e7",
+      "button_background_hover": "rgba(159, 212, 230, 0.10)",
+      "button_background_active": "#254b5b",
+      "toolbar_bottom_separator": "rgba(181, 214, 230, 0.14)",
+      "toolbar_vertical_separator": "rgba(181, 214, 230, 0.14)",
+      "toolbar_field": "rgba(9, 20, 29, 0.38)",
+      "toolbar_field_text": "#edf4f7",
+      "toolbar_field_border": "rgba(181, 214, 230, 0.14)",
+      "toolbar_field_focus": "rgba(9, 20, 29, 0.38)",
+      "toolbar_field_text_focus": "#edf4f7",
+      "toolbar_field_border_focus": "#8bd7e7",
+      "toolbar_field_highlight": "#254b5b",
+      "toolbar_field_highlight_text": "#edf4f7",
+      "tab_selected": "#254b5b",
+      "tab_text": "#edf4f7",
+      "tab_background_text": "#bdcbd3",
+      "tab_line": "#8bd7e7",
+      "tab_loading": "#8bd7e7",
+      "tab_background_separator": "rgba(181, 214, 230, 0.14)",
+      "sidebar": "rgba(12, 23, 32, 0.28)",
+      "sidebar_text": "#edf4f7",
+      "sidebar_border": "rgba(181, 214, 230, 0.14)",
+      "sidebar_highlight": "rgba(159, 212, 230, 0.48)",
+      "sidebar_highlight_text": "#edf4f7",
+      "sidebar_highlight_border": "rgba(181, 214, 230, 0.14)",
+      "popup": "rgba(20, 34, 44, 0.96)",
+      "popup_text": "#edf4f7",
+      "popup_border": "rgba(181, 214, 230, 0.14)",
+      "popup_highlight": "rgba(159, 212, 230, 0.18)",
+      "popup_highlight_text": "#edf4f7"
+    },
+    "properties": {
+      "color_scheme": "dark",
+      "content_color_scheme": "dark"
+    }
+  }
+}

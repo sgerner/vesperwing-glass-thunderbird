@@ -1,0 +1,65 @@
+/* Preferences use the same glass shell, with native control contrast retained. */
+@-moz-document url-prefix("about:preferences"), url("chrome://messenger/content/preferences/preferences.xhtml") {
+  @media screen and (forced-colors: none) {
+    :root#MailPreferences { background: transparent !important; }
+    #MailPreferences > body, #preferences-stack, #prefBox { background: transparent !important; }
+    #pref-category-box { background: light-dark(rgba(232,242,246,.42),rgba(12,23,32,.28)) !important; }
+    #preferencesContainer { background: light-dark(rgba(250,252,253,.65),rgba(14,24,32,.48)) !important; }
+  }
+  @media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+    :root#MailPreferences, #preferencesContainer, #pref-category-box { background: Canvas !important; }
+  }
+}
+
+/* The Add-ons Manager is a separate content page, not part of about:preferences.
+ * Clear its page shell and pass the palette variables through to its cards. */
+@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"), url-prefix("about:addons") {
+  @media screen and (forced-colors: none) {
+    :root {
+      color-scheme: light dark !important;
+      --background-color-canvas: transparent !important;
+      --background-color-box: light-dark(rgba(250,252,253,.56), rgba(14,24,32,.40)) !important;
+      --background-color-box-info: light-dark(rgba(232,242,246,.48), rgba(22,36,47,.38)) !important;
+      --text-color: light-dark(#172b37, #edf4f7) !important;
+      --text-color-deemphasized: light-dark(#435966, #bdcbd3) !important;
+      --border-color: light-dark(rgba(31,65,82,.16), rgba(181,214,230,.14)) !important;
+      --button-background-color-primary: light-dark(#12627a, #8bd7e7) !important;
+      --button-text-color-primary: light-dark(#fff, #10212a) !important;
+    }
+    html, body, #full, #content, #main, addon-manager,
+    .sticky-container, .main-search, .main-heading {
+      background: transparent !important;
+      background-image: none !important;
+    }
+    #sidebar {
+      background: light-dark(rgba(232,242,246,.42), rgba(12,23,32,.34)) !important;
+      border-color: light-dark(rgba(31,65,82,.16), rgba(181,214,230,.14)) !important;
+    }
+    #main > addon-list > section, addon-list > section,
+    addon-card > .addon.card, .addon-card-collapsed {
+      background: light-dark(rgba(250,252,253,.22), rgba(14,24,32,.22)) !important;
+      border: 1px solid light-dark(rgba(31,65,82,.16), rgba(181,214,230,.14)) !important;
+      border-radius: 10px !important;
+      box-shadow: none !important;
+    }
+  }
+  @media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+    :root, html, body, #full, #content, #main, #sidebar, addon-manager,
+    .sticky-container, .main-search, .main-heading, addon-card > .addon.card {
+      --background-color-canvas: Canvas !important;
+      --background-color-box: Canvas !important;
+      background: Canvas !important;
+      color: CanvasText !important;
+    }
+  }
+}
+
+/* Print controls only; preview paper and printed output remain native. */
+@-moz-document url("chrome://global/content/print.html") {
+  @media screen and (forced-colors: none) {
+    :root, body { background: light-dark(rgba(250,252,253,.78),rgba(18,29,38,.74)) !important; }
+  }
+  @media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+    :root, body { background: Canvas !important; }
+  }
+}
